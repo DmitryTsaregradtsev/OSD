@@ -1,0 +1,4 @@
+class UserInfo < ActiveRecord::Base
+  belongs_to :user, :foreign_key => "user_id"
+  attr_accessible :aboutme, :birth, :city, :location, :name, :photo, :sex, :surname
+end

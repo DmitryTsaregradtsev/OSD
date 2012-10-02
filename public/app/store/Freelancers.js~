@@ -1,0 +1,15 @@
+Ext.define('GUMAS.store.Freelancers',{
+	extend: 'Ext.data.Store',
+	model: 'GUMAS.model.Freelancer',
+	autoLoad: true,
+	
+	proxy: {
+		type: 'rest',
+		url: '/freelancers',
+		reader: {
+			type: 'json',
+			root: 'freelancers',
+			successProperty: 'success'
+			}
+		}
+	});

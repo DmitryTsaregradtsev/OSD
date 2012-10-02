@@ -1,0 +1,23 @@
+Ext.define('GUMAS.model.Freelancer',{
+	extend: 'Ext.data.Model',
+	fields: [
+		{ name:'id',type:'integer' },
+		{ name:'profile_id',type:'integer' },
+		{ name:'skills',type:'string' },
+        { name:'end_level', type:'string' },
+        { name:'rating', type:'float' },
+		{ name:'feedback', type:'string' },
+		{ name:'portfolio', type:'string' },
+		{ name:'category', type:'string' },
+		{ name:'salary', type:'float' },
+		{ name:'tests', type:'string' }
+    ],
+    associations: [{
+    	type: 'belongsTo',
+    	model: 'Profile',
+    	primaryKey: 'id',
+    	foreignKey: 'profile_id'
+    	}]
+	});
+	
+

@@ -1,0 +1,17 @@
+Ext.define('GUMAS.model.Profile',{
+	extend: 'Ext.data.Model',
+	fields: [
+		{ name:'id',type:'integer' },
+		{ name:'user_id',type:'integer' },
+		{ name:'name',type:'string' },
+        { name:'surname', type:'string' },
+        { name:'sex', type:'string' },
+		{ name:'birth', type:'date' },
+		{ name:'location', type:'string' },
+		{ name:'city', type:'string' },
+		{ name:'photo', type:'string' },
+		{ name:'aboutme', type:'string' }
+    ],
+    hasOne: 'Freelancer'
+	});
+

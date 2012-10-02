@@ -1,0 +1,3 @@
+class FreelancerInfo < ActiveRecord::Base
+  attr_accessible :freelance_id, :body
+end

@@ -1,0 +1,16 @@
+Ext.define('GUMAS.store.Profiles',{
+	extend: 'Ext.data.Store',
+	model: 'GUMAS.model.Profile',
+	autoLoad: true,
+	
+	proxy: {
+		type: 'rest',
+		url: '/profiles',
+		reader: {
+			type: 'json',
+			root: 'profiles',
+			successProperty: 'success'
+			}
+		}
+	});
+

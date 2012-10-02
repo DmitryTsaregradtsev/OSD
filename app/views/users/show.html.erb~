@@ -1,0 +1,27 @@
+<p>
+  <strong>Title:</strong>
+  <%= @user.login %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @user.email %>
+</p>
+ 
+<h2>Add a comment:</h2>
+<%= form_for([@user, @user.user_infos.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :surname %><br />
+    <%= f.text_area :surname %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Edit User', edit_user_path(@user) %> |
+<%= link_to 'Back to Posts', users_path %>

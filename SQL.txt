@@ -1,0 +1,52 @@
+ CREATE TABLE "teams" ("team_id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
+ "name" VARCHAR(50)  NOT NULL,
+ "created_at" DATETIME,
+ "leader" VARCHAR(50)  NOT NULL,
+ "logo" VARCHAR(100))
+
+
+CREATE TABLE "users" ("user_id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE ,
+"login" VARCHAR(15)  UNIQUE  NOT NULL,
+"password" VARCHAR(15)  NOT NULL,
+"email" VARCHAR(25)  UNIQUE  NOT NULL,
+"role" VARCHAR(50)  NOT NULL,
+"created_at" DATETIME)
+
+
+CREATE TABLE "user_infos" ("info_id" INTEGER NOT NULL ,
+"name" VARCHAR(50),
+"surname" VARCHAR(50),
+"location" VARCHAR(50),
+"city" VARCHAR(50),
+"photo" VARCHAR(100),
+"birth" VARCHAR(50),
+"sex" VARCHAR(50),
+"aboutme" TEXT(500),
+ FOREIGN KEY(info_id) REFERENCES users(user_id))
+ 
+ 
+ 
+ CREATE TABLE "freelancer_infos" ("freelance_id" INTEGER NOT NULL ,
+ "team" INTEGER(50),
+ "skills" TEXT(500),
+ "english_level" VARCHAR(50),
+ "rating" VARCHAR(50),
+ "feedback" TEXT(500),
+ "portfolio" TEXT(500),
+ "category" VARCHAR(50),
+ "sallary" VARCHAR(50),
+ "tests" TEXT(500),
+ FOREIGN KEY(freelance_id) REFERENCES users(user_id))
+ 
+ 
+ 
+ CREATE TABLE "contact_infos" ("contact_id" INTEGER NOT NULL ,
+ "skype" VARCHAR(50),
+ "icq" VARCHAR(50),
+ "yahoo" VARCHAR(50),
+ "msn" VARCHAR(50),
+ "mobile" VARCHAR(50),
+ "land" VARCHAR(50),
+ "website" VARCHAR(50),
+ "contact_email" VARCHAR(50),
+ FOREIGN KEY(contact_id) REFERENCES users(user_id))

@@ -1,0 +1,9 @@
+<h1>Welcome to my BLOG!</h1>
+
+<% @users.each do |user| %>
+  <p><%= user.login %></p>
+  <p><%= user.email %></p>
+  <hr>
+<% end %>
+
+
